@@ -58,7 +58,7 @@ pipeline {
        steps {
         // script start
         script{
-         echo "----- jar publish start -----"
+         echo "----- jar publish start ------"
 
          def server = Artifactory.newServer url: registry + "/artifactory", credentialsId: "sonarid"
          def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}"
