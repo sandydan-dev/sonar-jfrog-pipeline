@@ -69,7 +69,7 @@ pipeline {
                           "files": [
                             {
                               "pattern": "target/*.war",
-                              "target": "sandyjfrog-libs-release-local/war-files-verions/${version}/",
+                              "target": "sonar-jfrong-libs-release/war-files-verions/${version}/",
                               "flat": "true",
                               "props": "${properties}",
                               "exclusions": [ "*.sha1", "*.md5"]
