@@ -69,7 +69,7 @@ pipeline {
                           "files": [
                             {
                               "pattern": "target/*.war",
-                              "target": "sonar-jfrong-libs-release/jar-files-verions/${version}/",
+                              "target": "sonar-jfrong-maven-remote/jar-files-verions/${version}/",
                               "flat": "true",
                               "props": "${properties}",
                               "exclusions": [ "*.sha1", "*.md5"]
