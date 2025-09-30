@@ -13,19 +13,21 @@ pipeline {
 
      // build start
      stage("build"){
-
+       steps {
         echo "----- build starts -----"
         sh "mvn clean package -Dmaven.test.skip=true"  // create end project, and skip testing
         echo "----- build end -----" 
-
+       }
      }
      // build end
 
      // test start
      stage("test"){
+      steps {   
         echo "----- test start -----"
         sh "mvn surefire-report:report"  // test java code, testing code data
         echo "----- test end ------"
+      }
      }
      // test end
 
@@ -54,6 +56,8 @@ pipeline {
      stage("Jar Publish"){
      
        steps {
+        // script start
+        script{
          echo "----- jar publish start -----"
 
          def server = Artifactory.newServer url: registry + "/artifactory", credentialsId: "sonarid"
@@ -79,6 +83,9 @@ pipeline {
 
          echo "----- jar publish end -----"
        }
+         // script end 
+
+        }
   
      }  
 
